@@ -27,6 +27,10 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "github": {
+              "baseHref": "/emoti/",
+              "deployUrl": "/emoti/"
             }
           },
           "defaultConfiguration": "production"
