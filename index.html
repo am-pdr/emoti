@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>EMOTI - Jurnal & Habit Tracking</title>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="EMOTI este o aplicație de jurnal și habit tracking care te ajută să te înțelegi mai bine și să cultivi obiceiuri pozitive. Descoperă misiunea, echipa și funcționalitățile noastre." />
+  <meta property="og:title" content="EMOTI - Jurnal & Habit Tracking" />
+  <meta property="og:description" content="O aplicație de jurnal și habit tracking care te ține aproape de tine." />
+  <meta property="og:type" content="website" />
+  
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --pink: #FDCAFF;
+      --violet1: #FF6A88;
+      --violet2: #FF99AC;
+      --blue: #B9EEFF;
+      --accent-gradient: linear-gradient(90deg, var(--violet1) 0%, var(--violet2) 100%);
+
+      /* Light Theme */
+      --bg: #FAFBFF;
+      --card: #FFFFFF;
+      --text: #0F1222;
+      --muted: #6B7280;
+      --border: #e5e7eb;
+    }
+
+    [data-theme='dark'] {
+      /* Dark Theme */
+      --bg: #0B0E14;
+      --card: #121826;
+      --text: #E7ECF5;
+      --muted: #95A1B3;
+      --border: #374151;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px; /* Offset for sticky header */
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .font-heading {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .bg-accent-gradient {
+      background-image: var(--accent-gradient);
+    }
+
+    .text-gradient {
+      background-image: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+
+    /* Scroll animations */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .animate-on-scroll, * {
+        transition-duration: 0s !important;
+        animation-duration: 0s !important;
+      }
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "rxjs": "https://aistudiocdn.com/rxjs@^7.8.2?conditions=es2015",
+    "rxjs/operators": "https://aistudiocdn.com/rxjs@^7.8.2/operators?conditions=es2015",
+    "rxjs/ajax": "https://aistudiocdn.com/rxjs@^7.8.2/ajax?conditions=es2015",
+    "rxjs/webSocket": "https://aistudiocdn.com/rxjs@^7.8.2/webSocket?conditions=es2015",
+    "rxjs/testing": "https://aistudiocdn.com/rxjs@^7.8.2/testing?conditions=es2015",
+    "rxjs/fetch": "https://aistudiocdn.com/rxjs@^7.8.2/fetch?conditions=es2015",
+    "@angular/platform-browser": "https://next.esm.sh/@angular/platform-browser@^20.3.10?external=rxjs",
+    "@angular/core": "https://next.esm.sh/@angular/core@^20.3.10?external=rxjs",
+    "@angular/compiler": "https://next.esm.sh/@angular/compiler@^20.3.10?external=rxjs"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="antialiased">
+  <app-root></app-root>
+</body>
+</html>

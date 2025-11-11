@@ -1,0 +1,5 @@
+{
+  "name": "EMOTI - Jurnal & Habit Tracking",
+  "description": "A fancy, production-ready static website (landing page and wiki) for EMOTI, a habit tracking and journal app. Built with Angular and Tailwind CSS.",
+  "requestFramePermissions": []
+}
