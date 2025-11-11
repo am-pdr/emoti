@@ -36,8 +36,8 @@ jobs:
       - name: Build Angular (GitHub Pages)
         run: |
           npx ng build --configuration=production \
-            --base-href="/${{ env.REPO_NAME }}/" \
-            --deploy-url="/${{ env.REPO_NAME }}/" \
+            --base-href="/${{ env.emoti }}/" \
+            --deploy-url="/${{ env.emoti }}/" \
             --output-path=dist
 
       # Fallback pentru SPA (refresh pe rute)
