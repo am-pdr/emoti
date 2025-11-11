@@ -51,7 +51,10 @@
           "defaultConfiguration": "development"
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://am-pdr.github.io/emoti/"
+          }
         }
       }
     }
