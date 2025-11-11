@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  REPO_NAME: emoti   # ← schimbă aici dacă repo-ul are alt nume
+  REPO_NAME: emoti   # <- numele repo-ului tău
 
 jobs:
   build:
@@ -32,17 +32,26 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Build cu base/deploy url pentru Pages
       - name: Build Angular (GitHub Pages)
         run: |
           npx ng build --configuration=production \
-            --base-href="/${{ env.emoti }}/" \
-            --deploy-url="/${{ env.emoti }}/" \
+            --base-href="/${{ env.REPO_NAME }}/" \
+            --deploy-url="/${{ env.REPO_NAME }}/" \
             --output-path=dist
+          echo "---- dist tree ----"
+          ls -la dist
+          find dist -maxdepth 3 -type f -name "index.html" -print
 
-      # Fallback pentru SPA (refresh pe rute)
       - name: SPA fallback (copy index -> 404.html)
-        run: cp dist/index.html dist/404.html
+        run: |
+          set -e
+          INDEX=$(find dist -maxdepth 3 -type f -name "index.html" | head -n 1)
+          if [ -z "$INDEX" ]; then
+            echo "index.html not found under dist/"
+            exit 1
+          fi
+          cp "$INDEX" dist/404.html
+          touch dist/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
